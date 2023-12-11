@@ -1,5 +1,6 @@
 "use client";
 import { useAtom } from "jotai";
+import Link from "next/link";
 import { citiesAtom, countAtom, countryAtom } from "../state/atoms";
 
 // import countAtom
@@ -11,11 +12,15 @@ export default function Home() {
     return (
         <main className="flex min-h-screen flex-col items-center gap-2  bg-slate-700">
             <div className="gap-2 flex">
-                <button onClick={() => setCount(count + 1)}>Increment</button>
+                <button onClick={() => setCount((count) => count + 1)}>
+                    Increment
+                </button>
                 {count}
             </div>
             <div className="gap-2 flex">
-                <button onClick={() => setCount(count - 1)}>Decrement</button>
+                <button onClick={() => setCount((count) => count - 1)}>
+                    Decrement
+                </button>
                 {count}
             </div>
 
@@ -32,6 +37,13 @@ export default function Home() {
                     </p>
                 ))}
             </div>
+
+            <Link
+                href="/example"
+                className="bg-slate-900 p-2"
+            >
+                <div className="">Example</div>
+            </Link>
         </main>
     );
 }

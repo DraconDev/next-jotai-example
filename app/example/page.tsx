@@ -1,7 +1,17 @@
+"use client";
+import { countAtom } from "@/state/atoms";
+import { useAtom } from "jotai";
+
 type Props = {};
 
-const page = (props: Props) => {
-    return <div>Page</div>;
+const Example = (props: Props) => {
+    const [count, setCount] = useAtom(countAtom);
+    return (
+        <div>
+            Example
+            <div className="">{count}</div>
+        </div>
+    );
 };
 
-export default page;
+export default Example;
